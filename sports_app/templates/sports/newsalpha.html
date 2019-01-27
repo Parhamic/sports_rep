@@ -1,0 +1,44 @@
+{% load static %}
+<!doctype html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="{% static 'sports/styling.css' %}">
+</head>
+
+<body>
+    {% include 'sports/_navbar.html' %}
+    {% if object.image %}
+    <div class="newsimage">
+        <img src="{{ object.image.url }}" alt="">
+    </div>
+    {% endif %}
+    <div class="newscontent">
+        <h2>{{ object.title }}</h2>
+        <p>{{ object.created }}</p>
+        <p>{{ object.context }}</p>
+    </div>
+
+    <div class="comments">
+        {% for comment in comments %}
+        <br>
+        <p>{{comment.author}} on {{comment.created}}</p>
+        <p>{{comment.text}}</p>
+        <br>
+        {% endfor %}
+        {% if user.is_authenticated %}
+        <form method="POST">
+            {% csrf_token %}
+            <p>Submit your comment: </p>
+            <input type="text" name="text">
+            <input type="submit">
+        </form>
+        {% endif %}
+    </div>
+
+    <footer>
+        <p>contact us at ...</p>
+    </footer>
+</body>
+
+</html>

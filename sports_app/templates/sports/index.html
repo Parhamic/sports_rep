@@ -1,0 +1,120 @@
+{% load static %}
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'sports/styling.css' %}">
+    <title>Home</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+
+<body>
+    {% include 'sports/_navbar.html' %}
+    <div class="container1" id="game-section">
+        <h3>Today Games</h3>
+        <div class="favgamesbar">
+            <span class="label">subscribed</span>
+            {% if request.user.subscribes.count %}
+            {% for game in subscribed_today_games %}
+            <p><a href="{{game.get_absolute_url}}">{{ game }} ({{game.get_info}})</a></p>
+            {% endfor %}
+            {% else %}
+            <p>No subscribes</p>
+            {% endif %}
+        </div>
+        <div class="gamesbar">
+            {% for game in today_games %}
+            <p><a href="{{game.get_absolute_url}}">{{ game }} ({{game.get_info}})</a></p>
+            {% endfor %}
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br><br>
+        <h3>Yesterday Games</h3>
+        <div class="favgamesbar">
+            <span class="label">subscribed</span>
+            {% if request.user.subscribes.count %}
+            {% for game in subscribed_yesterday_games %}
+            <p><a href="{{game.get_absolute_url}}">{{ game }} ({{game.get_info}})</a></p>
+            {% endfor %}
+            {% else %}
+            <p>No subscribes</p>
+            {% endif %}
+        </div>
+        <div class="gamesbar">
+            {% for game in yesterday_games %}
+            <p><a href="{{game.get_absolute_url}}">{{ game }}</a></p>
+            {% endfor %}
+        </div>
+
+    </div>
+    <div class="break"></div>
+    <div class="container2">
+        <div class="content" id="news-section">
+            <h2>Subscibed News</h2>
+            {% for post in subscribed_posts %}
+            <p><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></p>
+            {% endfor %}
+        </div>
+
+    </div>
+    <div class="break" id="latest-news-section"></div>
+    <div class="break"></div>
+    <div class="break"></div>
+    <form action="#latest-news-section" method="GET">
+        <!-- FIX HERE -->
+        <select name="num" id="">
+            <option value="5" {% if request.GET.num == '5' %} selected {% endif %}>5</option>
+            <option value="10" {% if request.GET.num == '10' %} selected {% endif %}>10</option>
+            <option value="15" {% if request.GET.num == '15' %} selected {% endif %}>15</option>
+        </select>
+        <input type="submit">
+    </form>
+    <div class="container3">
+        <div class="content">
+            <h2>Latest Basketball News</h2>
+            {% for post in basketball_posts %}
+            <p><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></p>
+            {% endfor %}
+        </div>
+
+    </div>
+    <div class="break"></div>
+    <div class="container4">
+        <div class="content">
+            <h2>Latest Football News</h2>
+            {% for post in football_posts %}
+            <p><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></p>
+            {% endfor %}
+        </div>
+    </div>
+    <footer>
+        <p>Contact us at</p>
+    </footer>
+    <script>
+        $(document).ready(function () {
+            $("a").on('click', function (event) {
+                if (this.hash !== "") {
+                    event.preventDefault();
+                    var hash = this.hash;
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top - 65
+                    }, 700, function () {
+                        // window.location.hash = hash;
+                    });
+                }
+            });
+        });            
+    </script>
+</body>
+
+</html>

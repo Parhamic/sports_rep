@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="{% static 'sports/styling.css' %}">
+        <title>LeagueAlpha</title>
+    </head>
+    <body>
+        {% include 'sports/_navbar.html' %}
+        <div class="filter">
+            <input type="text" placeholder="Filter By">
+            <button>Filter</button>
+        </div>
+        <div class="standings">
+            <table>
+                <tr>
+                        <td>Team</td>
+                        <td>Games</td>
+                        <td>Points</td>
+                        <td>Wins</td>
+                        <td>Losts</td>
+                        <td>Draws</td>
+                        <td>GF</td>
+                        <td>GA</td>
+                </tr>
+                {% for team in object.league.teams.all %}
+                <tr>
+                        <td>
+                            <a href="{{team.get_absolute_url}}">{{team}}</a>
+                        </td>
+                        <td>{{team.num_games}}</td>
+                        <td>{{team.num_points}}</td>
+                        <td>{{team.num_wins}}</td>
+                        <td>{{team.num_losts}}</td>
+                        <td>{{team.num_draws}}</td>
+                        <td>{{team.num_gf}}</td>
+                        <td>{{team.num_ga}}</td>
+                </tr>
+                {% endfor %}            
+            </table>
+        
+
+        </div>
+        <div class="filtergames">
+            <input type="text" placeholder="Filter By">
+            <button>Filter</button>
+        </div>
+        <div class="leaguegames">
+            <div class="gamesweek">
+                {% for game in object.games.all %}
+                <p><a href="{{game.get_absolute_url}}">{{game}}</a></p>
+                {% endfor %}
+            </div>
+        </div>
+        <footer>
+            <p>Contact us at</p>
+        </footer>
+    </body>
+</html>

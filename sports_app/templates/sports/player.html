@@ -1,0 +1,76 @@
+{% load static %}
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="{% static 'sports/styling.css' %}">
+        <title>{{object.name}}</title>
+    </head>
+    <body>
+        {% include 'sports/_navbar.html' %}
+
+        <div class="playerphoto">
+            <img src="{{object.image.url}}" alt="player">
+        </div>
+        <div class="playerinfo">
+            <p>{{object.name}}</p>
+            <!-- FIX HERE -->
+            {% if user.is_authenticated %}
+            <form action="" method="GET">
+                <input type="hidden" name="action" value="{% if is_subscribed %}unsubscribe{% else %}subscribe{% endif %}">
+                <input type="submit" value="{% if is_subscribed %}Unsubscribe{% else %}Subscribe{% endif %}">
+            </form>
+            {% endif %}
+            <p>
+                <a href="{{object.team.get_absolute_url}}">{{object.team}}</a>
+            </p>
+            <p>Nation: {{object.nation}}</p>
+            <p>Position: {{object.role}}</p>
+            <p>Age: {{object.age}}</p>
+            <p>Weight: {{object.weight}}</p>
+            <p>Height: {{object.height}}</p>     
+
+        </div>
+        <div class="playerstats">
+            {% for key, season in seasons.items %}
+            <h2>{{key}}</h2>
+            <table>
+                <tr>
+                    <td>Goals</td>
+                    <td>{{season.goals}}</td>
+                </tr>
+                <tr>
+                    <td>Assisst</td>
+                    <td>{{season.assists}}</td>
+                </tr>
+                <tr>
+                    <td>Yellow Cards</td>
+                    <td>{{season.yellow_cards}}</td>
+                </tr>
+                <tr>
+                    <td>Red Cards</td>
+                    <td>{{season.red_cards}}</td>
+                </tr>
+            </table>
+            {% endfor %}
+        </div>
+        
+        <div class="playernews">
+            <!-- FIX HERE -->
+            <form method="GET">
+                    <select name="filter_by" id="">
+                        <option value="title" {% if request.GET.filter_by == 'title' %}selected{% endif %}>Title</option>
+                        <option value="text" {% if request.GET.filter_by == 'text' %}selected{% endif %}>Text</option>
+                        <input type="submit">
+                    </select>
+            </form>
+            <h1>Player News</h1>
+            {% for news in related_news %}
+            <p><a href="{{news.get_absolute_url}}">{{news.title}}</a></p>
+            {% endfor %}
+        </div>
+        <footer>
+            <p>contact us at</p>
+        </footer>
+    </body>
+</html>

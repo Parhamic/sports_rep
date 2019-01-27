@@ -1,0 +1,914 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font: normal 16px/24px "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: #000000;
+}
+
+.top {
+    height: 8%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    background-color: #c2781d;
+    clear: both;
+    
+}
+
+.top .toplist {
+    float: left;
+    width: 50%;
+    margin-top: 2%;
+    height: 100%;
+}
+
+.top .toplist ul li {
+    display: inline;
+    margin: 15px;
+    
+    
+    
+}
+
+.top .toplist ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    
+    
+    margin: auto;
+    padding: 5px;
+}
+
+.container1 {
+    width: 90%;
+    height: 640px;
+    margin-left: 60px;
+    margin-top: 90px;
+    margin-bottom: 10px;
+    border-style: solid;
+    border-radius: 5px;
+    border-width: 3px;
+    border-color: #ff9800;
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-left: 10px;
+
+    top: 100px;
+    background-color: #080808;
+    
+}
+.container1 h3{
+    color: white;
+}
+.container1 .favgamesbar {
+    width: 45%;
+    height: 250px;
+    text-align: center;
+    margin-top: 10px;
+    margin-left: 20px;
+    background-color: #000000;
+    border-style: solid;
+    border-radius: 5px;
+    border-width: 1px;
+    border-color: #000000;
+    padding: 10px;
+    float: left;
+    overflow-y: scroll;
+
+}
+
+.container1 .favgamesbar .label {
+    color: white;
+    align-content: center;
+    padding: 2px;
+    margin-bottom: 2px;
+    font-family: arial;
+    background-color: #ff9800;
+    border-style: solid;
+    border-radius: 3px;
+    border-color: #ff9800;
+    
+}
+.container1 .favgamesbar span{
+    margin-left: 0;
+}
+
+.container1 .favgamesbar p{
+    color: white;
+    margin-top: 5px;
+}
+.container1 .gamesbar p{
+    color: white;
+    
+    margin-top: 5px;
+}
+.container1 .gamesbar p a{
+    text-decoration: none;
+    color: white;
+}
+.container1 .gamesbar {
+    width: 45%;
+    height: 250px;
+    text-align: center;
+    margin-top: 10px;
+    margin-right: 20px;
+    background-color: rgb(0, 0, 0);
+    border-style:solid;
+    border-width: 2px;
+    border-radius: 5px;
+    padding: 10px;
+    float: right;
+    overflow-y: scroll;
+}
+.container1 h3 {
+    text-align: center;
+    border-bottom-style: solid;
+    font-size:20px;
+}
+.container2 {
+    width: 90%;
+    height: 700px;
+    margin-left: 60px;
+    margin-top: 70px;
+    margin-bottom: 10px;
+    background-image: url("aaa.jpg");
+    background-size: cover;
+    border-style: solid;
+    border-color: #ff9800;
+    border-width: 1px;
+    border-radius: 2px;
+
+}
+.container2 .content {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    text-align: center;
+    overflow-y: scroll;
+}
+
+.container2 .content h2{
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 24px;
+}
+.container2 .content p{
+    background: rgba(0, 0, 0, 0.5);  
+    padding-top: 5px;
+    font-size: 24px;
+}
+.container2 .content p a{
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+.container3{
+    width: 90%;
+    height: 700px;
+    margin-left: 60px;
+    margin-top: 70px;
+    margin-bottom: 10px;
+    background-image: url("basketball.jpg");
+    background-size: cover;
+    border-style: solid;
+    border-color: #000000;
+    border-width: 1px;
+    border-radius: 2px;
+    
+}
+
+.break{
+    background-color: #000000;
+    height: 1px;
+    width: 100%;
+    margin-top: 30px;
+    left: 0;
+}
+
+.container3 .content {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    overflow-y: scroll;
+
+    
+}
+
+.container3 .content h2{
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 24px;
+}
+.container3 .content p{
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    text-align: center;
+    padding-top: 5px;
+    font-size: 24px;
+
+}
+.container3 .content p a{
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.container4 {
+    width: 90%;
+    height: 700px;
+    margin-left: 60px;
+    margin-top: 70px;
+    margin-bottom: 10px;
+
+    top: 100px;
+    background-image: url("football.jpg");
+    background-size: cover; 
+    border-style: solid;
+    border-color: #000000;
+    border-width: 1px;
+    border-radius: 2px;
+    
+
+}
+
+.container4 .content {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    overflow-y: scroll;
+}
+
+.container4 .content h2{
+    text-align: center;
+    background : rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size:24px;
+}
+.container4 .content p{
+    background : rgba(0, 0, 0, 0.5);
+    color: white;  
+    padding-top: 5px;  
+    text-align: center;
+    font-size: 24px;
+}
+.container4 .content p a{
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+footer {
+    text-align: center;
+    width: 100%;
+    float: left;
+    padding: 10px;
+    margin-top: 5%;
+    height: 150px;
+    background-color: #080808;
+    text-decoration: white;
+}
+footer p{
+    color: white;
+    font-size: 14px;
+}
+
+.newsimage {
+    width: 70%;
+    height: 500px;
+    margin-left: 200px;
+    margin-right: 200px;
+    margin-top: 100px;
+    padding: 0;
+}
+
+.newsimage img{
+    max-width: 100%;
+    border-style: solid;
+    border-radius: 3px;
+    border-color: #ff9800;
+}
+
+.newscontent {
+    width: 70%;
+    height: 100%;
+    margin-left: 200px;
+    margin-right: 200px;
+    margin-top: 200px;
+    background-color: rgb(238, 238, 238);
+    position: relative;
+    padding: 10px;
+    border-style: solid;
+    border-radius: 3px;
+    border-color: #ff9800;
+}
+
+.newscontent h2{
+    color: black;
+    text-align: center;
+    font-size: 24px;
+}
+.newscontent p{
+    color: black;
+    font-size: 18px;
+}
+.logo {
+    width: 200px;
+    height: 200px;
+    float: right;
+    margin-top: 60px;
+    margin-right: 30px;
+    background-color: #020202;
+}
+.logo img{
+    object-fit: cover;
+    max-width: 100%;
+    max-height: 100%;
+    
+}
+.teamname {
+    float: left;
+    width: 30%;
+    margin-left: 50px;
+    background-color: rgb(0, 0, 0);
+    height: 100px;
+    margin-top: 100px;
+    padding-top: 40px;
+
+}
+.teamname h2{
+    color: #ff9800;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+.playersbar {
+    
+    width: 80%;
+    margin-left: 150px;
+    margin-right: 100px;
+    margin-top: 220px;
+    height: 520px;
+    padding: 20px;
+    background-color: rgb(28, 32, 36);
+    border-style: solid;
+    border-radius: 3px;
+    border-color: #ff9800;
+    overflow-y: scroll;
+}
+
+.playersbar .playercard {
+    width: 15%;
+    height: 150px;
+    float: left;
+    padding: 0;
+    margin: 15px;
+    margin-bottom: 20px;
+    background-color: #000000;
+
+}
+.playersbar .playercard img {
+    object-fit: cover;
+    max-width: 100%;
+    height: 100%;
+    border-style: solid;
+    border-radius: 2px;
+    border-color: #000000;
+}
+.playersbar .playercard p{
+    color: white;
+    font-size: 14px;
+    
+}
+
+.newbreak {
+    width: 100%;
+    height: 40px;
+    
+    margin-top: 50px;
+    background-color: #000000;
+    float: left;
+}
+
+.newsbar {
+    height: 600px;
+    width: 80%;
+    margin-left: 150px;
+    margin-right: 100px;
+    margin-top: 50px;
+    margin-bottom: 100px;
+    background-image: url("noucamp.jpg");
+    background-size: cover;
+    border-style: solid;
+    border-radius: 3px;
+    border-color: #ff9800;
+    overflow-y: scroll;
+}
+.newsbar .content {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    overflow-y: scroll;
+}
+.newsbar .content p {
+background : rgba(0, 0, 0, 0.4);
+color: white;  
+padding-top: 5px;  
+text-align: center;
+font-size: 24px;
+}
+
+.newsbar .content h2{
+    text-align: center;
+    background : rgba(0, 0, 0, 0.4);
+    color: white;
+    font-size:24px;
+}
+
+.teamgamesbar {
+    height: 600px;
+    width: 80%;
+    margin-left: 150px;
+    margin-right: 100px;
+    margin-top: 50px;
+    margin-bottom: 100px;
+    background-color: #000000;
+    background-size: cover;
+    border-style: solid;
+    border-radius: 3px;
+    border-color: #ff9800;
+    overflow-y: scroll;
+
+}
+
+.teamgamesbar h2{
+    color: white;
+    margin-top: 10px;
+    font-size: 24px;
+    text-align: center;
+    
+}
+.teamgamesbar .button {
+    background-color: #ff9800;
+    border: solid;
+    border-color: #ff9800;
+    color: white;
+    width: 100px;
+    padding: 2px;
+    margin-right: 80px;
+    margin-top: 20px;
+    margin-left: 150px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 2px;
+    font-size: 20px;
+    
+    cursor: pointer;
+}
+
+table {
+    width: 50%;
+    margin-left: 30%;
+    margin-top: 3%;
+    margin-bottom: 25px;
+    height: auto;
+    
+    background-color: black;
+}
+td , th , td {
+    text-align: center;
+    padding: 5px;
+    color: white;
+}
+table tr th a{
+    text-decoration: none;
+    color: white;
+}
+tr:nth-child(even) {
+    background-color: #ff9800;
+}
+
+.gamename {
+    width: 20%;
+    height: 40px;
+    margin-top: 8%;
+    margin-left: 30%;
+    background-color: rgb(0, 0, 0);
+    
+    padding: 10px;
+}
+.gamename p {
+    font-weight: bold;
+    color: #ff9800;
+    font-size: 24px;
+}
+.commentary{
+    float: left;
+    width: 15%;
+    margin-top: 3%;
+    background-color: #ff9800;
+    height: 400px;
+    overflow-y: scroll;
+    padding: 5px;
+    border-style: solid;
+    border-radius: 3px;
+    border-width: 2px;
+}
+.commentary h1{
+    color: black;
+    font-size: 18px;
+    text-align: center;
+}
+.commentary p{
+    color: black;
+    text-align: left;
+}
+
+tr img{
+    margin-left: 15px;
+    max-width: 5%;
+    max-height: 6%;
+}
+
+.bballstats {
+    width: 70%;
+    height: 500px;
+    border-style: solid;
+    border-radius: 3px;
+    border-color: #ff9800;
+    border-width: 1px;
+    margin-left: 15%;
+    margin-top: 50px;
+    overflow-y: scroll;
+}
+
+.bballstats table{
+    width: 90%;
+    height: 90%;
+    
+    float: right;
+    margin-right: 40px;
+}
+.bballstats a{
+    color: white;
+    text-decoration: none;
+}
+
+.newsforgame {
+    width: 70%;
+    height: 600px;
+    border-style: solid;
+    border-radius: 3px;
+    border-color: #ff9800;
+    border-width: 1px;
+    
+
+    margin-left: 15%;
+    margin-top: 50px;
+    background-image: url("stadium.jpg");
+    background-size: cover;
+}
+.newsforgame .content{
+    background: rgba(0, 0, 0, 0.4);
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+}
+
+.newsforgame .content p {
+    color: white;
+    text-align: center;
+    font-size: 18px;
+    margin: 3px;
+}
+
+.newsforgame .content h2 {
+    color: white;
+    text-align: center;
+    font-size: 24px;
+}
+.newsforgame .content p a{
+    text-decoration: none;
+    color: white;
+}
+
+.media {
+    width: 70%;
+    height: 300px;
+    border-style: solid;
+    border-radius: 3px;
+    border-color: #ff9800;
+    border-width: 1px;
+    margin-left: 15%;
+    margin-top: 50px;
+    
+}
+
+.media p{
+    text-align: center;
+    color: #ff9800;
+    font-size: 24px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    overflow-y: scroll;
+}
+.media .imagesbar{
+    width: 100%;
+    height: 100px;
+    margin-left: 30px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.media .imagesbar img{
+    max-width: 30%;
+    max-height: 100%;
+    margin-left: 10px;
+}
+
+.playerphoto {
+    margin-left: 25%;
+    margin-top: 8%;
+    width: 200px;
+    height: 200px;
+    border-style: solid;
+    border-radius: 5px;
+    float: left;
+    border-color: #ff9800;
+    border-width: 2px;
+    
+}
+
+.playerphoto img{
+    width: 100%;
+    max-height: 100%;
+    
+}
+
+.playerinfo {
+    width: 30%;
+    height: 200px;
+    margin-left: 1%;
+    margin-top: 8%;
+    margin-right: 23%;
+    padding: 10px;
+
+    float: right;
+    background-color: #000000;
+    border-style: solid;
+    border-color: #ff9800;
+    border-width: 2px;
+    border-radius: 5px;
+}
+.playerinfo p{
+    text-align: center;
+    color: white;
+}
+
+.playerinfo p a{
+    text-decoration: none;
+    color: white;
+}
+
+.playerstats {
+    width: 200px;
+    height: 400px;
+    margin-left: 25%;
+    margin-top: 2%;
+    float: left;
+    background-color: #000000;
+    border-style: solid;
+    border-radius: 5px;
+    border-width: 2px;
+    border-color: #ff9800;
+    padding: 10px;
+    overflow-y: scroll;
+}
+
+.playerstats h2{
+    text-align: center;
+    color: white;
+}
+
+.playernews {
+    width: 30%;
+    height: 400px;
+    background-color: #000000;
+    margin-left: 5%;
+    margin-right: 23%;
+    margin-top: 2%;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 5px;
+    border-color: #ff9800;
+    padding: 10px;
+    float: right;
+    overflow-y: scroll;
+
+}
+.playernews h1{
+    color: white;
+    text-align: center;
+}
+.playernews p{
+    text-align: center;
+}
+
+.playernews p a{
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+.leaguesbar {
+    float: left;
+    width: 40%;
+    height: 500px;
+    background-color: rgb(0, 0, 0);
+    padding: 10px;
+    margin-left: 7%;
+    margin-top: 3%;
+    border-style: solid;
+    border-color: #ff9800;
+    border-width: 1px;
+}
+
+.leaguesbar h1 {
+    color: white;
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    
+}
+.leaguesbar p{
+    text-align: center;
+    margin-top: 7px;
+}
+.leaguesbar p a{
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+}
+
+.searchbar {
+    width: 50%;
+    height: 50px;;
+    float: left;
+    padding: 8px;
+    padding-left: 10px;
+    margin-left: 20%;
+    margin-top: 6%;
+    background-color: #ff9800;
+    border-style: solid;
+    border-radius: 10px;
+    
+}
+
+input {
+    border-style: solid;
+    float: left;
+    border-color: white;
+    border-radius: 2px;
+}
+
+.searchbar button {
+    margin-left: 5px;
+    height:27px;
+}
+
+.searchbar h3 a{
+    color: white;
+}
+
+form {
+    border: 4px solid #ff9800;
+    margin-top: 10%;
+    margin-left: 20%;
+    width: 50%;
+    height: 60%;
+    float: left;
+    padding: 5px;
+}
+.inputforms {
+    width: 90%;
+    margin: 5% 10%;
+    padding: 1%;
+}
+
+.inputforms input[type=text], input[type=password] {
+    width: 80%;
+    padding: 12px 20px;
+    
+    margin-top: 5%;
+    margin-left: 10%;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+  
+  .inputforms a{
+      float: left;
+      text-align: center;
+      color: #ff9800;
+      font-size: 22px;
+      margin-top: 20px;
+      margin-left: 10px;
+      margin-right: 100px;
+      text-decoration: none;
+  }
+
+  .inputforms button {
+    background-color: #ff9800;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    float: left;
+    border: none;
+    cursor: pointer;
+    width: 80%;
+  }
+
+  .filter {
+      background-color: #000000;
+      margin-top: 100px;
+      width: 30%;
+      margin-left: 30%;
+  }
+
+  .filter button{
+      margin-left: 10px;
+      height: 28px;
+  }
+  
+  .standings {
+      
+      width: 30%;
+      height: 400px;
+      padding: 10px;
+      margin-left: 20%;
+      background-color: #000000;
+      margin-top: 10px;
+  }
+  .standings tr{
+      background-color: #ff9800;
+      width: 100%;
+      
+
+  }
+
+  .standings a{
+      text-decoration: none;
+      color: black;
+  }
+
+  .filtergames {
+    background-color: #000000;
+    margin-top: 5px;
+    width: 30%;
+    margin-left: 30%;
+}
+
+.filtergames button{
+    margin-left: 10px;
+    height: 28px;
+}
+
+  .leaguegames {
+      width: 50%;
+      height: 300px;
+      padding: 5px;
+      background-color: #020202;
+      margin-left: 20%;
+      margin-top: 10px;
+      border-style: solid;
+      border-color: #ff9800;
+      border-width: 5px;
+      overflow-y: scroll;
+  }
+  .gamesweek {
+      width: 100%;
+
+      
+  }
+
+  .leaguegames .gamesweek p{
+      text-align: center;
+      font-size: 24px;
+      color: white;
+      margin-top: 5px;
+  }
+  .leaguegames .gamesweek a{
+      text-decoration: none;
+      color: #ff9800;
+      margin-left: 10px;
+  }

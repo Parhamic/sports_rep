@@ -1,0 +1,73 @@
+{% load static %}
+<!doctype html>
+<html>
+    <head>
+        <link rel="stylesheet" href="{% static 'sports/styling.css' %}">
+        <title>Teamalpha</title>
+    </head>
+    <body>
+        {% include 'sports/_navbar.html' %}
+        <div class="teamname">
+            <h2>{{object.name}}</h2>
+            <!-- FIX HERE -->
+            {% if user.is_authenticated %}
+            <form action="" method="GET">
+                <input type="hidden" name="action" value="{% if is_subscribed %}unsubscribe{% else %}subscribe{% endif %}">
+                <input type="submit" value="{% if is_subscribed %}Unsubscribe{% else %}Subscribe{% endif %}">
+            </form>
+            {% endif %}
+        </div>
+        {% if object.image %}
+        <div class="logo">
+            <img src="{{object.image.url}}" alt="">
+        </div>
+        {% endif %}
+        
+        <div class="playersbar">
+            {% for player in object.players.all %}
+            <div class="playercard">
+                <a href="{{player.get_absolute_url}}"><img src="{{player.image.url}}" alt=""></a>
+                <p>{{player.name}}/{{player.role}}</p>
+            </div>
+            {% endfor %}
+        </div>
+        <!-- FIX HERE -->
+       <form method="GET">
+           <select name="filter_by" id="">
+               <option value="title" {% if request.GET.filter_by == 'title' %}selected{% endif %}>Title</option>
+               <option value="text" {% if request.GET.filter_by == 'text' %}selected{% endif %}>Text</option>
+               <input type="submit">
+           </select>
+       </form>
+        <div class="newbreak"></div>
+        <div class="newsbar">
+            <div class="content">
+                <h2>FC Barcelona News</h2>
+                {% for news in related_news %}
+                <a href="{{news.get_absolute_url}}"><p>{{news.title}}</p></a>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="teamgamesbar">
+            <h2>Games</h2>
+            <span class="button">Wins</span>
+            <span class="button">Date</span>
+            <span class="button">Points</span>
+            <!-- FIX HERE -->
+            <span class="newsbar"> <div class="content">
+            {% for game in games %}
+            <p>
+            {{game}} - {{game.get_info}}
+            </p>
+            {% endfor %}
+            </div> </span>
+        </div>
+        <footer>
+            <p>
+                Contact Us at
+            </p>
+        </footer>
+        
+    </body>
+</html>

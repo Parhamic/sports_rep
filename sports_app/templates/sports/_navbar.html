@@ -1,0 +1,21 @@
+<div class="top">
+    <div class="toplist">
+        <ul>
+            {% if user.is_authenticated %}
+            <li>
+                Hello {{user}}, <a href="{% url 'logout' %}">Logout</a>
+            </li>
+            {% else %}
+            <li>
+                <a href="{% url 'login' %}">Login</a>
+            </li>
+            {% endif %}
+            <li>
+                <a href="/#game-section">Home</a>
+            </li>
+            <li>
+                <a href="{% url 'leagues_view' %}">Leagues</a>
+            </li>
+        </ul>
+    </div>
+</div>

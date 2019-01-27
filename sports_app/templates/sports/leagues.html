@@ -1,0 +1,27 @@
+{% load static %}
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="{% static 'sports/styling.css' %}">
+        <title>Leagues</title>
+    </head>
+    <body>
+        {% include 'sports/_navbar.html' %}
+        <div class="searchbar">
+            <form method="GET">
+                <input type="text" name="q" placeholder="Search">
+                <input type="submit" value="Search">
+            </form>
+        </div>
+        <div class="leaguesbar">
+            <h1>Leagues</h1>
+            {% for season in seasons %}
+            <p><a href="{{season.get_absolute_url}}">{{season}}</a></p>
+            {% endfor %}
+        </div>
+        <footer>
+            <p>Contact us at</p>
+        </footer>
+    </body>
+</html>

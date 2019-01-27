@@ -1,0 +1,177 @@
+{% load static %}
+{% load sports_tag %}
+<!doctype html>
+<html>
+    <head>
+        <title>Game</title>
+        <link rel="stylesheet" href="{% static 'sports/styling.css' %}">
+    </head>
+    <body>
+        {% include 'sports/_navbar.html' %}
+        <div class="gamename"><p><a href="{{object.team1.get_absolute_url}}">{{object.team1}}</a> vs <a href="{{object.team2.get_absolute_url}}">{{object.team2}}</a></p></div>
+        <div class="gamename"><p>{{object.get_info|safe}}</p></div>
+        <div class="commentary">
+                <h1>Commentary</h1>
+                {% for activity in object.activities.all %}
+                <p>{{activity.description}}</p>
+                {% endfor %}
+            </div>
+        <table>
+            <tr>
+                <th><a href="{{object.team1.get_absolute_url}}">{{object.team1}}</a></th>
+                <th>Stats</th>
+                <th><a href="{{object.team2.get_absolute_url}}">{{object.team2}}</a></th>
+            </tr>
+            {% if object.team1.sport == 'FB' %}
+            <tr>
+                <td>{{ object.football_info.goals_1}}</td>
+                <td>Goals</td>
+                <td>{{ object.football_info.goals_2}}</td>
+            </tr>
+            <tr>
+                <td>{{ object.football_info.possession_1}}</td>
+                <td>Possession</td>
+                <td>{{ object.football_info.possession_2}}</td>
+            </tr>
+            <tr>
+                <td>{{ object.football_info.shots_1}}</td>
+                <td>Shots</td>
+                <td>{{ object.football_info.shots_2}}</td>
+            </tr>
+            <tr>
+                <td>{{ object.football_info.shots_on_target_1}}</td>
+                <td>Shots On Target</td>
+                <td>{{ object.football_info.shots_on_target_2}}</td>
+            </tr>
+            <tr>
+                <td>{{ object.football_info.yellow_cards_1}}</td>
+                <td>Yellow Card</td>
+                <td>{{ object.football_info.yellow_cards_2}}</td>
+            </tr>
+            <tr>
+                <td>{{ object.football_info.red_cards_1}}</td>
+                <td>Red Card</td>
+                <td>{{ object.football_info.red_cards_1}}</td>
+            </tr>
+            <tr>
+                <td>{{ object.football_info.corners_1}}</td>
+                <td>Corner</td>
+                <td>{{ object.football_info.corners_2}}</td>
+            </tr> 
+            <tr>
+                <td>{{ object.football_info.offsides_1}}</td>
+                <td>Offside</td>
+                <td>{{ object.football_info.offsides_2}}</td>
+            </tr>
+            <tr>
+                <td>{{ object.football_info.fouls_1}}</td>
+                <td>Fouls</td>
+                <td>{{ object.football_info.fouls_2}}</td>
+            </tr>
+            {% else %}                                                                                       
+                <tr>
+                    <td>{{ object.basketball_info.score_1}}</td>
+                    <td>Score</td>
+                    <td>{{ object.basketball_info.score_2}}</td>
+                </tr>
+                <tr>
+                    <td>{{ object.basketball_info.q1_1}}</td>
+                    <td>Q1</td>
+                    <td>{{ object.basketball_info.q2_2}}</td>
+                </tr>
+                <tr>
+                    <td>{{ object.basketball_info.q2_1}}</td>
+                    <td>Q2</td>
+                    <td>{{ object.basketball_info.q2_2}}</td>
+                </tr>
+                <tr>
+                    <td>{{ object.basketball_info.q3_1}}</td>
+                    <td>Q3</td>
+                    <td>{{ object.basketball_info.q3_2}}</td>
+                </tr>
+                <tr>
+                    <td>{{ object.basketball_info.q4_1}}</td>
+                    <td>Q4</td>
+                    <td>{{ object.basketball_info.q4_2}}</td>
+                </tr>
+                <tr>
+                    <td>{{ object.basketball_info.threepoint_1}}</td>
+                    <td>3pt</td>
+                    <td>{{ object.basketball_info.threepoint_2}}</td>
+                </tr>
+                <tr>
+                    <td>{{ object.basketball_info.twopoint_1}}</td>
+                    <td>2pt</td>
+                    <td>{{ object.basketball_info.twopoint_2}}</td>
+                </tr> 
+                <tr>
+                    <td>{{ object.basketball_info.penalty_1}}</td>
+                    <td>Penalty</td>
+                    <td>{{ object.basketball_info.penalty_2}}</td>
+                </tr>
+                <tr>
+                    <td>{{ object.basketball_info.fouls_1}}</td>
+                    <td>Fouls</td>
+                    <td>{{ object.basketball_info.fouls_2}}</td>
+                </tr>
+                <tr>
+                    <td>{{ object.basketball_info.rebound_1}}</td>
+                    <td>Rebound</td>
+                    <td>{{ object.basketball_info.rebound_2}}</td>
+                </tr>
+            {% endif %}
+        </table>
+
+        <div class="gamename"><p>{{object.team1.name}} Players</p></div>
+        <table>
+            {% for player in object.team1.players.all %}
+            <tr>
+               <td><a href="{{player.get_absolute_url}}">{{player.name}}</a>
+                {% if player in object.players.all %}
+                    <img src="{% static 'sports/green.png' %}" alt="">
+                    {% else %}
+                    <img src="{% static 'sports/red.png' %}" alt="">
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}                                                       
+        </table>
+        <div class="gamename"><p>{{object.team2.name}} Players</p></div>
+        <table>
+            {% for player in object.team2.players.all %}
+            <tr>
+                <td><a href="{{player.get_absolute_url}}">{{player.name}}</a>
+                    {% if player in object.players.all %}
+                    <img src="{% static 'sports/green.png' %}" alt="">
+                    {% else %}
+                    <img src="{% static 'sports/red.png' %}" alt="">
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}                                                       
+        </table>
+
+        <div class="newsforgame">
+            <div class="content">
+                <h2>News</h2>
+                {% for news in related_news %}
+                <p><a href="{{news.get_absolute_url}}">{{news.title}}</a></p>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="media">
+            <p>Photos</p>
+            <div class="imagesbar">
+                {% for media in game.media.all %}
+                <img src="{{media.image.url}}" alt="fight">
+                {% endfor %}
+            </div>
+        </div>
+        <footer>
+            <p>
+                Contact Us at
+            </p>
+        </footer>
+    </body>
+    
+</html>

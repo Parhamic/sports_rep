@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+            <link rel="stylesheet" href="{% static 'sports/styling.css' %}">
+            <title>Home</title>
+        </head>
+        <body>
+            {% include 'sports/_navbar.html' %}
+
+            <form method="POST">
+                {% for message in messages %}
+                <p>{{message}}</p>
+                {% endfor %}
+                <div class="inputforms">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <input type="submit" value="Sign Up">
+                    <a href="{% url 'reset_password' %}">Forgot Password?</a>
+                </div>
+            </form>
+</html>
