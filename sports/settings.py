@@ -10,6 +10,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 LOGIN_REDIRECT_URL = '/'
 
 INSTALLED_APPS = [
+    'sports_app',
     'accounts',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -17,7 +18,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'sports_app',
 ]
 
 MIDDLEWARE = [
