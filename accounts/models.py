@@ -19,4 +19,4 @@ class Subscribe(models.Model):
                                null=True, blank=True, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.user.username
+        return self.user_related_to.username
