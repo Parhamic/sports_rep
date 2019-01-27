@@ -9,7 +9,7 @@ class User(AbstractUser):
 
 
 class Subscribe(models.Model):
-    user = models.ForeignKey(User,
+    user_related_to = models.ForeignKey(User,
                              related_name='subscribes', on_delete=models.CASCADE)
     team = models.ForeignKey(Team,
                              null=True, blank=True, on_delete=models.CASCADE)
