@@ -137,7 +137,7 @@ class PostDetailView(DetailView):
         try:
             text = request.POST['text']
             Comment.objects.create(
-                post=self.get_object(), author=request.user, text=text, active=True)
+                post=self.get_object(), author=request.user.username, text=text, active=True)
         except:
             pass
         # reload the page

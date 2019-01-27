@@ -49,8 +49,7 @@ class NewsPost(models.Model):
 class Comment(models.Model):
     post = models.ForeignKey(
         NewsPost, related_name='comments', on_delete=models.CASCADE)
-    author = models.ForeignKey(
-        'accounts.User', related_name='comments', on_delete=models.CASCADE)
+    author = models.CharField(max_length=64)
     created = models.DateTimeField(auto_now_add=True)
     text = models.TextField()
     active = models.BooleanField(default=False)
